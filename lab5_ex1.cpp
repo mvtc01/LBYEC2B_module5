@@ -3,6 +3,91 @@
 
 double const PI = 3.14159265358979323846f;
 
+class Triangle
+{
+	private:
+		double side_a;	//private attributes
+		double side_b;
+		double side_c;
+		double p;
+		double triang_area;	
+		
+		
+	public:
+		//Setter
+		Triangle(double a, double b, double c)	//constructor made public
+		{
+			side_a = a;     //private attributes can be used since both within the same class
+			side_b = b;
+			side_c = c;
+			p = (side_a + side_b + side_c)/2;   //solving for the parameter of the triangle, p
+			triang_area = sqrt(p*(p - side_a)*(p - side_b)*(p - side_c));
+			
+		}
+		//Getter
+		double getArea()	//method or function with no arguments
+		{
+			return triang_area;
+		}
+};
+
+class Rectangle
+{
+	private:
+		double length;
+		double width;
+		double side;
+		double rect_area;
+		
+	public:
+		Rectangle(double l, double w)   //there can be multiple constructors in one class given different arguments
+		{
+			length = l;
+			width = w;
+			rect_area = length*width;
+		}
+
+		Rectangle(double s)
+		{
+			side = s;
+			rect_area = side*side;
+		}
+		
+		double getArea()
+		{
+			return rect_area;
+		}
+		
+};
+
+class Ellipse
+{
+	private:
+		double maj_ax;
+		double min_ax;
+		double diameter;
+		double ellipse_area;
+	
+	public:
+		Ellipse(double a, double b)
+		{
+			maj_ax = a;
+			min_ax = b;
+			ellipse_area = (PI*maj_ax*min_ax)/4;
+		}
+		
+		Ellipse(double d)
+		{
+			diameter = d;
+			ellipse_area = (PI*diameter*diameter)/4;
+		}
+		
+		double getArea()
+		{
+			return ellipse_area;
+		}
+};
+
 int main()
 {
     int choice = 0;
